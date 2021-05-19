@@ -1,0 +1,2 @@
+rootProject.name = "studyRoad-Android"
+include ':app'
