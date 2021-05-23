@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button2"
+        android:id="@+id/planeButton2"
         android:text="@string/_11"
         android:layout_width="65dp"
         android:layout_height="39dp"
@@ -30,7 +30,7 @@
         app:layout_constraintVertical_bias="0.411" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button3"
+        android:id="@+id/pointsButton2"
         android:layout_width="65dp"
         android:layout_height="39dp"
         android:background="@drawable/toolbar_button"
@@ -38,10 +38,31 @@
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintStart_toEndOf="@+id/planeButton"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.411" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/timerButton"
+        android:layout_width="65dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="12dp"
+        android:background="@drawable/toolbar_button"
+        android:text="TIMER"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.411" />
+
+    <fragment
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

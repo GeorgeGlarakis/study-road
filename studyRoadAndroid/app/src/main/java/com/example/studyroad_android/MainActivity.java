@@ -2,8 +2,10 @@ package com.example.studyroad_android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -23,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        configureMapButton();
 
         timeRemaining = findViewById(R.id.timerText);
         startButton = findViewById(R.id.timerButton);
@@ -71,6 +75,12 @@ public class MainActivity extends AppCompatActivity {
 
         timeRemaining.setText(timeLeftText);
         timerProgress.setProgress((int) progressPercent);
+    }
+
+    public void configureMapButton(){
+        Button mapButton = (Button) findViewById(R.id.mapButton);
+
+        mapButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, mapActivity.class)));
     }
 
 }
