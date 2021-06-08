@@ -34,5 +34,9 @@ public class MapFragment extends FragmentActivity implements OnMapReadyCallback 
         LatLng Patras = new LatLng(38.246362, 21.734835);
         map.addMarker(new MarkerOptions().position(Patras).title("Patras"));
         map.moveCamera(CameraUpdateFactory.newLatLng(Patras));
+
+        LatLng Athens = new LatLng(37.981479, 23.726942);
+        map.addMarker(new MarkerOptions().position(Athens).title("Athens"));
+        map.moveCamera(CameraUpdateFactory.newLatLng(Athens));
     }
 }
