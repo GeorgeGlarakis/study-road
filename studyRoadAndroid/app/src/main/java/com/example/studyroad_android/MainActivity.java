@@ -11,6 +11,8 @@ import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.GoogleMap;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -98,6 +100,10 @@ public class MainActivity extends AppCompatActivity {
 
         timeRemaining.setText(timeLeftText);
         timerProgress.setProgress((int) progressPercent);
+
+        //when timer ends, add a pin
+        //Adds a new pin to the map.
+        if(setTimeLeft == 0) mapActivity.addMapPin();
     }
 
     public void configureMapButton(){
@@ -146,4 +152,5 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(timeBar.getProgress());
         updateUI(setTime,setTime);
     }
+
 }

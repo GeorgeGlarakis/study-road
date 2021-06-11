@@ -12,12 +12,13 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.internal.IGoogleMapDelegate;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class mapActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    GoogleMap map;
+    public static GoogleMap map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class mapActivity extends FragmentActivity implements OnMapReadyCallback 
         map.moveCamera(CameraUpdateFactory.newLatLng(Patras));
     }
 
+    //Button that returns to timer screen
     public void configureTimerButton(){
         Button mapButton = (Button) findViewById(R.id.timerButton);
 
@@ -50,5 +52,13 @@ public class mapActivity extends FragmentActivity implements OnMapReadyCallback 
                 finish();
             }
         });
+    }
+
+
+    public static void addMapPin(){
+        //add a new map pin
+
+        LatLng newMarker = new LatLng(38.355994, 21.750249);
+        map.addMarker(new MarkerOptions().position(newMarker).title("Progress"));
     }
 }
